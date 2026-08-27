@@ -35,7 +35,7 @@ def logout_view(request):
 def admin_dashboard(request):
     if not request.user.is_admin_user:
         messages.warning(request, 'You do not have admin access.')
-        return redirect('billing:distributor_dashboard')
+        return redirect('distributor_dashboard')
     return render(request, 'billing/admin_dashboard.html')
 
 
@@ -49,5 +49,5 @@ def distributor_dashboard(request):
 
 def _redirect_by_role(user):
     if user.is_admin_user:
-        return redirect('billing:admin_dashboard')
-    return redirect('billing:distributor_dashboard')
+        return redirect('admin_dashboard')
+    return redirect('distributor_dashboard')
