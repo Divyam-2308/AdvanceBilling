@@ -1,12 +1,32 @@
-/* Base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* QR dot grid pattern for login branding panel */
+.qr-pattern {
+    background-image:
+        radial-gradient(circle, rgba(16, 185, 129, 0.3) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
+/* Smooth scrollbar for sidebars */
+aside ::-webkit-scrollbar {
+    width: 4px;
+}
+aside ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+}
+aside ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Focus-visible for accessibility */
+*:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }
